@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from personas.views import HomeView, PersonaCreationView, PersonaDetailView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^alta$', PersonaCreationView.as_view(), name='alta_persona'),
+    url(r'^photos/(?P<pk>[0-9]+)$', PersonaDetailView.as_view(), name='photos_detail'),
+    url(r'^$', HomeView.as_view(), name='goiztiri_home'),
 ]

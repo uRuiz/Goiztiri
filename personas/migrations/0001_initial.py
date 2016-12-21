@@ -3,7 +3,6 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import phonenumber_field.modelfields
 
 
 class Migration(migrations.Migration):
@@ -24,7 +23,6 @@ class Migration(migrations.Migration):
                 ('sexo', models.CharField(choices=[('H', 'Hombre'), ('M', 'Mujer')], default='H', max_length=1)),
                 ('fecha_nacimiento', models.DateField()),
                 ('direccion', models.CharField(max_length=100)),
-                ('telefono', phonenumber_field.modelfields.PhoneNumberField(max_length=128)),
                 ('empadronamiento', models.CharField(choices=[('S', 'Si'), ('N', 'No')], default='N', max_length=1)),
                 ('fecha_alta', models.DateTimeField(auto_now_add=True)),
                 ('fecha_modificacion', models.DateTimeField(auto_now=True)),
